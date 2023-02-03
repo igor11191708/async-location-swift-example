@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import d3_location
+import d3_async_location
 
 struct ContentView: View {
     

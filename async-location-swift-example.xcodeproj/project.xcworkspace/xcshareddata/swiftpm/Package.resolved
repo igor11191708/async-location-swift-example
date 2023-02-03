@@ -1,12 +1,12 @@
 {
   "pins" : [
     {
-      "identity" : "d3-location",
+      "identity" : "d3-async-location",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/The-Igor/d3-location.git",
+      "location" : "https://github.com/The-Igor/d3-async-location",
       "state" : {
         "branch" : "main",
-        "revision" : "8f86dba0ab6792c93880071beacca4b2bbb7dad8"
+        "revision" : "a0d8f64698999693c21692382701e95e005ed101"
       }
     }
   ],
