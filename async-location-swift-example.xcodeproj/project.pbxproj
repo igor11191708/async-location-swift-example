@@ -12,6 +12,7 @@
 		780BBCC2298CEC5F00A4EEE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 780BBCC1298CEC5F00A4EEE6 /* Assets.xcassets */; };
 		780BBCC5298CEC5F00A4EEE6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 780BBCC4298CEC5F00A4EEE6 /* Preview Assets.xcassets */; };
 		780BBCCD298CF5C500A4EEE6 /* d3-location in Frameworks */ = {isa = PBXBuildFile; productRef = 780BBCCC298CF5C500A4EEE6 /* d3-location */; };
+		780BBCD2298CF99400A4EEE6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 780BBCD1298CF99400A4EEE6 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		780BBCC1298CEC5F00A4EEE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		780BBCC4298CEC5F00A4EEE6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		780BBCD0298CF6A300A4EEE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		780BBCD1298CF99400A4EEE6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		780BBCBC298CEC5F00A4EEE6 /* async-location-swift-example */ = {
 			isa = PBXGroup;
 			children = (
+				780BBCD1298CF99400A4EEE6 /* README.md */,
 				780BBCD0298CF6A300A4EEE6 /* Info.plist */,
 				780BBCBD298CEC5F00A4EEE6 /* async_location_swift_exampleApp.swift */,
 				780BBCBF298CEC5F00A4EEE6 /* ContentView.swift */,
@@ -135,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				780BBCD2298CF99400A4EEE6 /* README.md in Resources */,
 				780BBCC5298CEC5F00A4EEE6 /* Preview Assets.xcassets in Resources */,
 				780BBCC2298CEC5F00A4EEE6 /* Assets.xcassets in Resources */,
 			);
