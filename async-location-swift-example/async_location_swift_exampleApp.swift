@@ -6,12 +6,27 @@
 //
 
 import SwiftUI
+import d3_location
 
 @main
-struct async_location_swift_exampleApp: App {
+struct ConcurrenceApp: App {
+    
+    @State var isOn = true
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView{
+                VStack{
+                    if isOn{
+                        ContentView()
+                            .environmentObject(LMViewModel())
+                    }
+                }.toolbar{
+                    ToolbarItem{
+                        Button("isOn") { isOn.toggle() }
+                    }
+                }
+            }
         }
     }
 }
