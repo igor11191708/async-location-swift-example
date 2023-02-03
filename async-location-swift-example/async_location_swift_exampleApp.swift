@@ -17,14 +17,8 @@ struct ConcurrenceApp: App {
         WindowGroup {
             NavigationView{
                 VStack{
-                    if isOn{
-                        ContentView()
-                            .environmentObject(LMViewModel())
-                    }
-                }.toolbar{
-                    ToolbarItem{
-                        Button("isOn") { isOn.toggle() }
-                    }
+                    ContentView()
+                        .environmentObject(LMViewModel())
                 }
             }
         }
