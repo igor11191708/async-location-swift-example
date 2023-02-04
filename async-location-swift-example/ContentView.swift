@@ -10,33 +10,53 @@ import d3_async_location
 
 struct ContentView: View {
     
-    @EnvironmentObject var model: LMViewModel
-        
-    @State var error : String?
+    @StateObject var viewModel = LMViewModel()
+    
+    @State var error : [Error] = []
+    
+    @State var task : Task<(), Never>?
     
     @ViewBuilder
     var coordinatesTpl: some View{
-        List(model.locations, id: \.hash) { location in
+        List(viewModel.locations, id: \.hash) { location in
             Text("\(location.coordinate.longitude), \(location.coordinate.latitude)")
         }
     }
     
     var body: some View {
-        ZStack{
-            if let error {
-                Text(error).foregroundColor(.red)
-            }else{
-                coordinatesTpl
+        VStack{
+            HStack{
+                Button("cancel"){ task?.cancel() }
+                Button("stop"){ viewModel.stop() }
+                Button("start"){
+                    task?.cancel()
+                    task = Task{
+                        do{
+                            try await viewModel.start()
+                        }catch{
+                            print(error)
+                        }
+                        
+                    } }
             }
+            coordinatesTpl
         }
-             .navigationTitle("Coordinates")
-             .task{
-                 do{
-                     try await model.start()
-                 }catch{
-                     self.error = error.localizedDescription
-                 }
-             }
+        .navigationTitle("Coordinates")
+        .onAppear{
+            let task = Task{
+                do{
+                    try await viewModel.start()
+                }catch{
+                    self.error.append(error)
+                    print(error)
+                }
+            }
+            
+            self.task = task
+        }
+        .onDisappear{
+            task?.cancel()
+        }
     }
 }
 
