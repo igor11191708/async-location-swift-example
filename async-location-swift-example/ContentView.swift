@@ -42,8 +42,10 @@ struct ContentView: View {
     @ViewBuilder
     private var toolbarTpl : some View{
         HStack{
-            Button("cancel"){ cancelTask() }.disabled(isCanceled)
-            Button("stop"){ viewModel.stop(); cancelTask() }.disabled(isCanceled)
+            Group{
+                Button("cancel"){ cancelTask() }
+                Button("stop"){ viewModel.stop(); cancelTask() }
+            }.disabled(isCanceled)
             Button("start"){ startTask() }.disabled(!isCanceled)
         }
     }
