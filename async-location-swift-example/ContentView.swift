@@ -57,6 +57,7 @@ struct ContentView: View {
             do{
                 try await viewModel.start()
             }catch{
+                cancelTask()
                 print(error)
             }
         }
