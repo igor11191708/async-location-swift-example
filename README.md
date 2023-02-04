@@ -9,4 +9,5 @@
 - [x] Errors handling
 
 ## SwiftUI example for package
+
 [Async location streamer](https://github.com/The-Igor/d3-async-location)
