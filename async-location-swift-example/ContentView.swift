@@ -12,8 +12,6 @@ struct ContentView: View {
     
     @StateObject var viewModel = LMViewModel()
     
-    @State var error : [Error] = []
-    
     @State var task : Task<(), Never>?
     
     @ViewBuilder
@@ -23,39 +21,43 @@ struct ContentView: View {
         }
     }
     
+    var isCanceled : Bool{ task == nil }
+    
+    private func startTask(){
+        task = Task{
+            do{
+                try await viewModel.start()
+            }catch{
+                print(error)
+            }
+        }
+    }
+    
+    private func cancelTask(){
+        task?.cancel()
+        task = nil
+    }
+    
+    @ViewBuilder
+    var toolbarTpl : some View{
+        HStack{
+            Button("cancel"){ cancelTask() }.disabled(isCanceled)
+            Button("stop"){ viewModel.stop(); cancelTask() }
+            Button("start"){ startTask() }
+        }
+    }
+    
     var body: some View {
         VStack{
-            HStack{
-                Button("cancel"){ task?.cancel() }
-                Button("stop"){ viewModel.stop() }
-                Button("start"){
-                    task?.cancel()
-                    task = Task{
-                        do{
-                            try await viewModel.start()
-                        }catch{
-                            print(error)
-                        }
-                        
-                    } }
-            }
+            toolbarTpl
             coordinatesTpl
         }
         .navigationTitle("Coordinates")
         .onAppear{
-            let task = Task{
-                do{
-                    try await viewModel.start()
-                }catch{
-                    self.error.append(error)
-                    print(error)
-                }
-            }
-            
-            self.task = task
+            startTask()
         }
         .onDisappear{
-            task?.cancel()
+            cancelTask()
         }
     }
 }
