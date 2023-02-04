@@ -10,16 +10,45 @@ import d3_async_location
 
 struct ContentView: View {
     
-    @StateObject var viewModel = LMViewModel()
+    @StateObject private var viewModel = LMViewModel()
     
-    @State var task : Task<(), Never>?
+    @State private  var task : Task<(), Never>?
+   
+    // MARK: - Life circle
+    
+    var body: some View {
+        VStack{
+            toolbarTpl
+            coordinatesTpl
+        }
+        .navigationTitle("Coordinates")
+        .onAppear{
+            startTask()
+        }
+        .onDisappear{
+            cancelTask()
+        }
+    }
+   
+    // MARK: - Private Tpl
     
     @ViewBuilder
-    var coordinatesTpl: some View{
+    private var coordinatesTpl: some View{
         List(viewModel.locations, id: \.hash) { location in
             Text("\(location.coordinate.longitude), \(location.coordinate.latitude)")
         }
     }
+    
+    @ViewBuilder
+    private var toolbarTpl : some View{
+        HStack{
+            Button("cancel"){ cancelTask() }.disabled(isCanceled)
+            Button("stop"){ viewModel.stop(); cancelTask() }.disabled(isCanceled)
+            Button("start"){ startTask() }.disabled(!isCanceled)
+        }
+    }
+    
+    // MARK: - Private
     
     var isCanceled : Bool{ task == nil }
     
@@ -37,34 +66,5 @@ struct ContentView: View {
         task?.cancel()
         task = nil
     }
-    
-    @ViewBuilder
-    var toolbarTpl : some View{
-        HStack{
-            Button("cancel"){ cancelTask() }.disabled(isCanceled)
-            Button("stop"){ viewModel.stop(); cancelTask() }
-            Button("start"){ startTask() }
-        }
-    }
-    
-    var body: some View {
-        VStack{
-            toolbarTpl
-            coordinatesTpl
-        }
-        .navigationTitle("Coordinates")
-        .onAppear{
-            startTask()
-        }
-        .onDisappear{
-            cancelTask()
-        }
-    }
 }
 
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
