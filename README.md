@@ -6,7 +6,7 @@
 - [x] Customizable in terms of CLLocationManager properties
 - [x] Streaming current locations asynchronously
 - [x] Support for iOS and watchOS
-- [x] Errors handling
+- [x] Errors handling (as **AsyncLocationErrors** so CoreLocation errors **CLError**)
 
 ## SwiftUI example for package
 
