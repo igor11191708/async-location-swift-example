@@ -7,10 +7,14 @@
 
 import SwiftUI
 import d3_async_location
+import MapKit
+
 
 struct ContentView: View {
     
     @StateObject private var viewModel = LMViewModel()
+    
+    @StateObject private var mapViewModel = MapViewModel()
     
     @State private  var task : Task<(), Never>?
    
@@ -18,10 +22,17 @@ struct ContentView: View {
     
     var body: some View {
         VStack{
+            let map = Map(coordinateRegion: $mapViewModel.location)
+            
             toolbarTpl
             coordinatesTpl
+            map
+                .edgesIgnoringSafeArea(.bottom)
+                .frame(height: 400)
+                .onChange(of: viewModel.locations){ mapViewModel.setCurrentLocation($0) }
+            
         }
-        .navigationTitle("Coordinates")
+        .navigationTitle("Async/await Location")
         .onAppear{
             startTask()
         }
