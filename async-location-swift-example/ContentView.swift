@@ -9,8 +9,6 @@ import SwiftUI
 import d3_async_location
 import MapKit
 
-
-
 struct ContentView: View {
     
     @StateObject private var viewModel = LMViewModel()
@@ -33,6 +31,7 @@ struct ContentView: View {
                     coordinatesTpl
                         .frame(height: 302)
                 }
+                .padding(.bottom, 25)
             }            
         }
         .onChange(of: viewModel.locations){ value in
@@ -56,6 +55,7 @@ struct ContentView: View {
         }
         .listRowBackground(Color.clear)
         .scrollContentBackground(.hidden)
+        .scrollIndicators(.hidden)
     }
     
     @ViewBuilder
@@ -67,17 +67,12 @@ struct ContentView: View {
             }.disabled(isCanceled)
             Button("start"){ startTask() }.disabled(!isCanceled)
         }
-        .tint(.yellow)
-        .font(.system(.title3))
-        .fontWeight(.semibold)
-        .padding()
-        .background(.thickMaterial)
-        .cornerRadius(25)
+        .modifier(ToolbarItemModifier())
     }
     
     // MARK: - Private
     
-    var isCanceled : Bool{ task == nil }
+    private var isCanceled : Bool{ task == nil }
     
     private func startTask(){
         task = Task{
@@ -95,4 +90,3 @@ struct ContentView: View {
         task = nil
     }
 }
-

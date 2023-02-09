@@ -31,13 +31,7 @@ struct ConcurrenceApp: App {
        
             Button(action: { isOn.toggle() }, label: {
                 Text(isOn ? "hide" : "show")
-                    .padding(5)
-                    .padding(.horizontal, 10)
-                    .background(.thickMaterial)
-                    .cornerRadius(25)
-                    .tint(.yellow)
-                    .font(.system(.title3))
-                    .fontWeight(.semibold)
+                    .modifier(ToolbarItemModifier())
             })
         
     }

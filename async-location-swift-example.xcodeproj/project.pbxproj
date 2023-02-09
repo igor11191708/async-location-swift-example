@@ -15,6 +15,7 @@
 		780BBCD5298D038D00A4EEE6 /* d3-async-location in Frameworks */ = {isa = PBXBuildFile; productRef = 780BBCD4298D038D00A4EEE6 /* d3-async-location */; };
 		78CA15F62994F01F00BC0124 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA15F52994F01F00BC0124 /* MapViewModel.swift */; };
 		78CA15F82995142900BC0124 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA15F72995142900BC0124 /* MapView.swift */; };
+		78CA15FA29952BE900BC0124 /* ToolbarItemModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA15F929952BE900BC0124 /* ToolbarItemModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		780BBCD1298CF99400A4EEE6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		78CA15F52994F01F00BC0124 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		78CA15F72995142900BC0124 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		78CA15F929952BE900BC0124 /* ToolbarItemModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarItemModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				780BBCC3298CEC5F00A4EEE6 /* Preview Content */,
 				78CA15F52994F01F00BC0124 /* MapViewModel.swift */,
 				78CA15F72995142900BC0124 /* MapView.swift */,
+				78CA15F929952BE900BC0124 /* ToolbarItemModifier.swift */,
 			);
 			path = "async-location-swift-example";
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			files = (
 				780BBCC0298CEC5F00A4EEE6 /* ContentView.swift in Sources */,
 				78CA15F82995142900BC0124 /* MapView.swift in Sources */,
+				78CA15FA29952BE900BC0124 /* ToolbarItemModifier.swift in Sources */,
 				780BBCBE298CEC5F00A4EEE6 /* async_location_swift_exampleApp.swift in Sources */,
 				78CA15F62994F01F00BC0124 /* MapViewModel.swift in Sources */,
 			);
