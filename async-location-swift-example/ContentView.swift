@@ -10,6 +10,7 @@ import d3_async_location
 import MapKit
 
 
+
 struct ContentView: View {
     
     @StateObject private var viewModel = LMViewModel()
@@ -17,20 +18,29 @@ struct ContentView: View {
     @StateObject private var mapViewModel = MapViewModel()
     
     @State private  var task : Task<(), Never>?
-   
+    
     // MARK: - Life circle
     
     var body: some View {
-        VStack{
-            let map = Map(coordinateRegion: $mapViewModel.location)
+        ZStack(alignment: .bottom){
+            MapView(mapType: .hybrid)
+                .environmentObject(mapViewModel)
+                .edgesIgnoringSafeArea(.all)
+            VStack(spacing: 0){
+                toolbarTpl
+                    .padding()
+                    .background(.thickMaterial)
+                    .cornerRadius(25)
+                Spacer()
+                ZStack(alignment: .bottom){
+                    coordinatesTpl
+                        .frame(height: 302)
+                }
+            }.frame(maxHeight: .infinity)
             
-            toolbarTpl
-            coordinatesTpl
-            map
-                .edgesIgnoringSafeArea(.bottom)
-                .frame(height: 400)
-                .onChange(of: viewModel.locations){ mapViewModel.setCurrentLocation($0) }
-            
+        }
+        .onChange(of: viewModel.locations){ value in
+            mapViewModel.detector.send(value)
         }
         .navigationTitle("Async/await Location")
         .onAppear{
@@ -48,6 +58,8 @@ struct ContentView: View {
         List(viewModel.locations, id: \.hash) { location in
             Text("\(location.coordinate.longitude), \(location.coordinate.latitude)")
         }
+        .listRowBackground(Color.clear)
+        .scrollContentBackground(.hidden)
     }
     
     @ViewBuilder
@@ -59,6 +71,9 @@ struct ContentView: View {
             }.disabled(isCanceled)
             Button("start"){ startTask() }.disabled(!isCanceled)
         }
+        .tint(.yellow)
+        .font(.system(.title3))
+        .fontWeight(.semibold)
     }
     
     // MARK: - Private

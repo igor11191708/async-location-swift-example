@@ -14,6 +14,7 @@
 		780BBCD2298CF99400A4EEE6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 780BBCD1298CF99400A4EEE6 /* README.md */; };
 		780BBCD5298D038D00A4EEE6 /* d3-async-location in Frameworks */ = {isa = PBXBuildFile; productRef = 780BBCD4298D038D00A4EEE6 /* d3-async-location */; };
 		78CA15F62994F01F00BC0124 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA15F52994F01F00BC0124 /* MapViewModel.swift */; };
+		78CA15F82995142900BC0124 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA15F72995142900BC0124 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		780BBCD0298CF6A300A4EEE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		780BBCD1298CF99400A4EEE6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		78CA15F52994F01F00BC0124 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		78CA15F72995142900BC0124 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				780BBCC1298CEC5F00A4EEE6 /* Assets.xcassets */,
 				780BBCC3298CEC5F00A4EEE6 /* Preview Content */,
 				78CA15F52994F01F00BC0124 /* MapViewModel.swift */,
+				78CA15F72995142900BC0124 /* MapView.swift */,
 			);
 			path = "async-location-swift-example";
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				780BBCC0298CEC5F00A4EEE6 /* ContentView.swift in Sources */,
+				78CA15F82995142900BC0124 /* MapView.swift in Sources */,
 				780BBCBE298CEC5F00A4EEE6 /* async_location_swift_exampleApp.swift in Sources */,
 				78CA15F62994F01F00BC0124 /* MapViewModel.swift in Sources */,
 			);
@@ -294,7 +298,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,7 +329,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

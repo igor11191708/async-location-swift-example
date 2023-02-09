@@ -20,13 +20,27 @@ struct ConcurrenceApp: App {
                     if isOn{
                        ContentView()
                     }
-                }.toolbar{
-                    ToolbarItem{
-                        Button(isOn ? "hide" : "show") { isOn.toggle() }
-                    }
-                }
+                }.toolbar{  ToolbarItem{ button } }
             }
+            .preferredColorScheme(.dark)
         }
     }
+    
+    @ViewBuilder
+    private var button : some View {
+       
+            Button(action: { isOn.toggle() }, label: {
+                Text(isOn ? "hide" : "show")
+                    .padding(5)
+                    .padding(.horizontal, 10)
+                    .background(.thickMaterial)
+                    .cornerRadius(25)
+                    .tint(.yellow)
+                    .font(.system(.title3))
+                    .fontWeight(.semibold)
+            })
+        
+    }
+    
 }
 
