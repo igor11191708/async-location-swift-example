@@ -5,9 +5,11 @@
 - [x] Using new concurrency swift model around CoreLocation manager
 - [x] Customizable in terms of CLLocationManager properties
 - [x] Streaming current locations asynchronously
-- [x] Support for iOS and watchOS
+- [x] Support for iOS from 14.1 and watchOS
 - [x] Errors handling (as **AsyncLocationErrors** so CoreLocation errors **CLError**)
 
 ## SwiftUI example for package
 
 [Async location streamer](https://github.com/The-Igor/d3-async-location)
+
+ ![simulate locations](https://github.com/The-Igor/d3-async-location/blob/main/img/image8.gif)
