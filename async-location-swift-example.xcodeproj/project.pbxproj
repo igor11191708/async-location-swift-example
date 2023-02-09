@@ -62,15 +62,14 @@
 		780BBCBC298CEC5F00A4EEE6 /* async-location-swift-example */ = {
 			isa = PBXGroup;
 			children = (
+				78CA15FE29954DE600BC0124 /* app */,
+				78CA15FD29954DD400BC0124 /* modifier */,
+				78CA15FC29954DBA00BC0124 /* view */,
+				78CA15FB29954DAD00BC0124 /* viewmodel */,
 				780BBCD1298CF99400A4EEE6 /* README.md */,
 				780BBCD0298CF6A300A4EEE6 /* Info.plist */,
-				780BBCBD298CEC5F00A4EEE6 /* async_location_swift_exampleApp.swift */,
-				780BBCBF298CEC5F00A4EEE6 /* ContentView.swift */,
 				780BBCC1298CEC5F00A4EEE6 /* Assets.xcassets */,
 				780BBCC3298CEC5F00A4EEE6 /* Preview Content */,
-				78CA15F52994F01F00BC0124 /* MapViewModel.swift */,
-				78CA15F72995142900BC0124 /* MapView.swift */,
-				78CA15F929952BE900BC0124 /* ToolbarItemModifier.swift */,
 			);
 			path = "async-location-swift-example";
 			sourceTree = "<group>";
@@ -81,6 +80,39 @@
 				780BBCC4298CEC5F00A4EEE6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		78CA15FB29954DAD00BC0124 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				78CA15F52994F01F00BC0124 /* MapViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		78CA15FC29954DBA00BC0124 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				78CA15F72995142900BC0124 /* MapView.swift */,
+				780BBCBF298CEC5F00A4EEE6 /* ContentView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		78CA15FD29954DD400BC0124 /* modifier */ = {
+			isa = PBXGroup;
+			children = (
+				78CA15F929952BE900BC0124 /* ToolbarItemModifier.swift */,
+			);
+			path = modifier;
+			sourceTree = "<group>";
+		};
+		78CA15FE29954DE600BC0124 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				780BBCBD298CEC5F00A4EEE6 /* async_location_swift_exampleApp.swift */,
+			);
+			path = app;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

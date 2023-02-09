@@ -34,13 +34,21 @@ final class MapViewModel : ObservableObject{
     }
 }
 
+// MARK: - Helpers -
+
+fileprivate func coordinate(from location: CLLocation) -> CLLocationCoordinate2D{
+    
+    let coord = location.coordinate
+    
+    return .init(latitude: coord.latitude, longitude: coord.longitude)
+}
+
 fileprivate func currentLocation(_ locations : [CLLocation] ) -> MKCoordinateRegion{
     
-    guard let location =  locations.last else{ return MKCoordinateRegion() }
+    guard let location =  locations.last else{ return .init() }
     
     let span = MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5)
-    let coordinate = location.coordinate
-    let center = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+    let center = coordinate(from: location)
     
-    return MKCoordinateRegion(center: center, span: span )
+    return .init(center: center, span: span )
 }

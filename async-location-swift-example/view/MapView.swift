@@ -13,12 +13,14 @@ struct MapView: UIViewRepresentable  {
     @EnvironmentObject private var mapViewModel: MapViewModel
     
     let mapType : MKMapType
-    
-    private let mapView = MKMapView()
 
     func makeUIView(context: Context) -> MKMapView {
+        
+        let mapView = MKMapView()
+        
         mapView.mapType = mapType
         mapView.setRegion(mapViewModel.location, animated: false)
+        
         return mapView
     }
 
