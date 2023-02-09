@@ -36,8 +36,7 @@ struct ContentView: View {
                     coordinatesTpl
                         .frame(height: 302)
                 }
-            }.frame(maxHeight: .infinity)
-            
+            }            
         }
         .onChange(of: viewModel.locations){ value in
             mapViewModel.detector.send(value)
