@@ -11,9 +11,11 @@ import Combine
 
 final class MapViewModel : ObservableObject{
     
-    @Published var location = MKCoordinateRegion()
+    @Published private(set) var location = MKCoordinateRegion()
     
-    let detector : PassthroughSubject<[CLLocation], Never> = .init()
+    private let detector : PassthroughSubject<[CLLocation], Never> = .init()
+    
+    // MARK: - Life circle
     
     deinit{
         print("deinit MapViewModel")
@@ -23,6 +25,12 @@ final class MapViewModel : ObservableObject{
         detector
             .map(currentLocation)
             .assign(to: &$location)
+    }
+    
+    // MARK: - API
+    
+    public func setCurrentLocation(_ locations : [CLLocation]){
+        detector.send(locations)
     }
 }
 

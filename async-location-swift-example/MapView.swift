@@ -14,7 +14,7 @@ struct MapView: UIViewRepresentable  {
     
     let mapType : MKMapType
     
-    let mapView = MKMapView()
+    private let mapView = MKMapView()
 
     func makeUIView(context: Context) -> MKMapView {
         mapView.mapType = mapType

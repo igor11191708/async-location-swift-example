@@ -28,9 +28,6 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack(spacing: 0){
                 toolbarTpl
-                    .padding()
-                    .background(.thickMaterial)
-                    .cornerRadius(25)
                 Spacer()
                 ZStack(alignment: .bottom){
                     coordinatesTpl
@@ -39,7 +36,7 @@ struct ContentView: View {
             }            
         }
         .onChange(of: viewModel.locations){ value in
-            mapViewModel.detector.send(value)
+            mapViewModel.setCurrentLocation(value)
         }
         .navigationTitle("Async/await Location")
         .onAppear{
@@ -73,6 +70,9 @@ struct ContentView: View {
         .tint(.yellow)
         .font(.system(.title3))
         .fontWeight(.semibold)
+        .padding()
+        .background(.thickMaterial)
+        .cornerRadius(25)
     }
     
     // MARK: - Private
