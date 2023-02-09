@@ -52,6 +52,7 @@ struct ContentView: View {
     private var coordinatesTpl: some View{
         List(viewModel.locations, id: \.hash) { location in
             Text("\(location.coordinate.longitude), \(location.coordinate.latitude)")
+                .fontWeight(.semibold)
         }
         .listRowBackground(Color.clear)
         .scrollContentBackground(.hidden)
