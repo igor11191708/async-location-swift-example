@@ -11,7 +11,7 @@ import MapKit
 
 struct ContentView: View {
     
-    @StateObject private var viewModel = LMViewModel(strategy: .keepLast)
+    @StateObject private var viewModel = LMViewModel()
     
     @StateObject private var mapViewModel = MapViewModel()
     
