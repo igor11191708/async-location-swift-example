@@ -11,8 +11,6 @@ import d3_async_location
 @main
 struct ConcurrenceApp: App {
     
-    @State var isOn = true
-    
     var body: some Scene {
         WindowGroup {
             NavigationView{
@@ -20,6 +18,6 @@ struct ConcurrenceApp: App {
             }
             .preferredColorScheme(.dark)
         }
-    }    
+    }
 }
 
