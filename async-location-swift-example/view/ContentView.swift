@@ -11,7 +11,7 @@ import MapKit
 
 struct ContentView: View {
     
-    @StateObject private var viewModel = LMViewModel()
+    @StateObject private var viewModel = LMViewModel(strategy: .keepLast)
     
     @StateObject private var mapViewModel = MapViewModel()
     
@@ -28,8 +28,7 @@ struct ContentView: View {
                 toolbarTpl
                 Spacer()
                 ZStack(alignment: .bottom){
-                    coordinatesTpl
-                        .frame(height: 302)
+                    coordinateTpl
                 }
                 .padding(.bottom, 25)
             }            
@@ -49,14 +48,11 @@ struct ContentView: View {
     // MARK: - Private Tpl
     
     @ViewBuilder
-    private var coordinatesTpl: some View{
-        List(viewModel.locations, id: \.hash) { location in
-            Text("\(location.coordinate.longitude), \(location.coordinate.latitude)")
-                .fontWeight(.semibold)
-        }
-        .listRowBackground(Color.clear)
-        .scrollContentBackground(.hidden)
-        .scrollIndicators(.hidden)
+    private var coordinateTpl: some View{
+        let center = mapViewModel.location.center
+        Text("\(center.longitude), \(center.latitude)")
+            .fontWeight(.semibold)
+            .modifier(ToolbarItemModifier())
     }
     
     @ViewBuilder
