@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		780BBCBE298CEC5F00A4EEE6 /* async_location_swift_exampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780BBCBD298CEC5F00A4EEE6 /* async_location_swift_exampleApp.swift */; };
-		780BBCC0298CEC5F00A4EEE6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780BBCBF298CEC5F00A4EEE6 /* ContentView.swift */; };
 		780BBCC2298CEC5F00A4EEE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 780BBCC1298CEC5F00A4EEE6 /* Assets.xcassets */; };
 		780BBCC5298CEC5F00A4EEE6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 780BBCC4298CEC5F00A4EEE6 /* Preview Assets.xcassets */; };
 		780BBCD2298CF99400A4EEE6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 780BBCD1298CF99400A4EEE6 /* README.md */; };
@@ -16,12 +15,12 @@
 		78CA15F62994F01F00BC0124 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA15F52994F01F00BC0124 /* MapViewModel.swift */; };
 		78CA15F82995142900BC0124 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA15F72995142900BC0124 /* MapView.swift */; };
 		78CA15FA29952BE900BC0124 /* ToolbarItemModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA15F929952BE900BC0124 /* ToolbarItemModifier.swift */; };
+		78CA16162996015000BC0124 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA16152996015000BC0124 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		780BBCBA298CEC5F00A4EEE6 /* async-location-swift-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "async-location-swift-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		780BBCBD298CEC5F00A4EEE6 /* async_location_swift_exampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = async_location_swift_exampleApp.swift; sourceTree = "<group>"; };
-		780BBCBF298CEC5F00A4EEE6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		780BBCC1298CEC5F00A4EEE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		780BBCC4298CEC5F00A4EEE6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		780BBCD0298CF6A300A4EEE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -29,6 +28,7 @@
 		78CA15F52994F01F00BC0124 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		78CA15F72995142900BC0124 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		78CA15F929952BE900BC0124 /* ToolbarItemModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarItemModifier.swift; sourceTree = "<group>"; };
+		78CA16152996015000BC0124 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +93,8 @@
 		78CA15FC29954DBA00BC0124 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				78CA16152996015000BC0124 /* ContentView.swift */,
 				78CA15F72995142900BC0124 /* MapView.swift */,
-				780BBCBF298CEC5F00A4EEE6 /* ContentView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -192,8 +192,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				780BBCC0298CEC5F00A4EEE6 /* ContentView.swift in Sources */,
 				78CA15F82995142900BC0124 /* MapView.swift in Sources */,
+				78CA16162996015000BC0124 /* ContentView.swift in Sources */,
 				78CA15FA29952BE900BC0124 /* ToolbarItemModifier.swift in Sources */,
 				780BBCBE298CEC5F00A4EEE6 /* async_location_swift_exampleApp.swift in Sources */,
 				78CA15F62994F01F00BC0124 /* MapViewModel.swift in Sources */,

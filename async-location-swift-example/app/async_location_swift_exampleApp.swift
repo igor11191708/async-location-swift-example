@@ -16,25 +16,10 @@ struct ConcurrenceApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView{
-                VStack{
-                    if isOn{
-                       ContentView()
-                    }
-                }.toolbar{  ToolbarItem{ button } }
+                ContentView()
             }
             .preferredColorScheme(.dark)
         }
-    }
-    
-    @ViewBuilder
-    private var button : some View {
-       
-            Button(action: { isOn.toggle() }, label: {
-                Text(isOn ? "hide" : "show")
-                    .modifier(ToolbarItemModifier())
-            })
-        
-    }
-    
+    }    
 }
 
