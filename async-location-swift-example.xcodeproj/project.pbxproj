@@ -16,7 +16,7 @@
 		78CA15F82995142900BC0124 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA15F72995142900BC0124 /* MapView.swift */; };
 		78CA15FA29952BE900BC0124 /* ToolbarItemModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA15F929952BE900BC0124 /* ToolbarItemModifier.swift */; };
 		78CA16162996015000BC0124 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA16152996015000BC0124 /* ContentView.swift */; };
-		78DB5F4F299776FF008A341E /* AddressEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB5F4E299776FF008A341E /* AddressEncoder.swift */; };
+		78DB5F4F299776FF008A341E /* AddressDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB5F4E299776FF008A341E /* AddressDecoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 		78CA15F72995142900BC0124 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		78CA15F929952BE900BC0124 /* ToolbarItemModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarItemModifier.swift; sourceTree = "<group>"; };
 		78CA16152996015000BC0124 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		78DB5F4E299776FF008A341E /* AddressEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressEncoder.swift; sourceTree = "<group>"; };
+		78DB5F4E299776FF008A341E /* AddressDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressDecoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +121,7 @@
 		78DB5F4C299776C8008A341E /* helpers */ = {
 			isa = PBXGroup;
 			children = (
-				78DB5F4E299776FF008A341E /* AddressEncoder.swift */,
+				78DB5F4E299776FF008A341E /* AddressDecoder.swift */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -206,7 +206,7 @@
 				78CA15F82995142900BC0124 /* MapView.swift in Sources */,
 				78CA16162996015000BC0124 /* ContentView.swift in Sources */,
 				78CA15FA29952BE900BC0124 /* ToolbarItemModifier.swift in Sources */,
-				78DB5F4F299776FF008A341E /* AddressEncoder.swift in Sources */,
+				78DB5F4F299776FF008A341E /* AddressDecoder.swift in Sources */,
 				780BBCBE298CEC5F00A4EEE6 /* async_location_swift_exampleApp.swift in Sources */,
 				78CA15F62994F01F00BC0124 /* MapViewModel.swift in Sources */,
 			);

@@ -8,14 +8,14 @@
 import CoreLocation
 import Contacts
 
-enum AddressEncoder {
+enum AddressDecoder {
     
     enum AdressError: Error{
         case noAddressesFound
     }
     
     /// Async function to convert a ``CLLocation`` into a  readable address
-    static func encode(for location: CLLocation) async throws -> String {
+    static func decode(for location: CLLocation) async throws -> String {
         let geocoder = CLGeocoder()
         let lines = try await geocoder.reverseGeocodeLocation(location)
         

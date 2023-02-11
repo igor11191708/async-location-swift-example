@@ -55,7 +55,7 @@ final class MapViewModel : ObservableObject{
         
         task = Task{
             do{
-                let address = try await AddressEncoder.encode(for: location)
+                let address = try await AddressDecoder.decode(for: location)
                 await setAddress(text: address)
             }catch{
                 print(error)
