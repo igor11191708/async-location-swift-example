@@ -15,7 +15,9 @@ struct ContentView: View {
     
     @StateObject private var mapViewModel = MapViewModel()
     
-    @State private  var task : Task<(), Never>?
+    @State private var task : Task<(), Never>?
+    
+    @State private var address : String = ""
     
     // MARK: - Life circle
     
@@ -28,10 +30,13 @@ struct ContentView: View {
                 toolbarTpl
                 Spacer()
                 ZStack(alignment: .bottom){
-                    coordinateTpl
+                    VStack{
+                        coordinateTpl
+                        addressTpl
+                    }
                 }
                 .padding(.bottom, 25)
-            }            
+            }
         }
         .onChange(of: viewModel.locations){ value in
             mapViewModel.setCurrentLocation(value)
@@ -53,6 +58,13 @@ struct ContentView: View {
         Text("\(center.longitude), \(center.latitude)")
             .fontWeight(.semibold)
             .modifier(ToolbarItemModifier())
+    }
+    
+    @ViewBuilder
+    private var addressTpl: some View{
+            Text(mapViewModel.address)
+                .fontWeight(.semibold)
+                .modifier(ToolbarItemModifier())
     }
     
     @ViewBuilder

@@ -13,11 +13,16 @@ final class MapViewModel : ObservableObject{
     
     @Published private(set) var location = MKCoordinateRegion()
     
+    @MainActor @Published private(set) var address : String = ""
+    
     private let detector : PassthroughSubject<[CLLocation], Never> = .init()
+    
+    private var task : Task<(), Never>?
     
     // MARK: - Life circle
     
     deinit{
+        task?.cancel()
         print("deinit MapViewModel")
     }
     
@@ -31,6 +36,31 @@ final class MapViewModel : ObservableObject{
     
     public func setCurrentLocation(_ locations : [CLLocation]){
         detector.send(locations)
+        
+        guard let location = locations.last else{ return }
+        
+        encodeAddress(for: location)
+    }
+    
+    @MainActor
+    func setAddress(text : String){
+     address = text
+    }
+    
+    // MARK: - Private
+    
+    private func encodeAddress(for location : CLLocation){
+        
+        task?.cancel()
+        
+        task = Task{
+            do{
+                let address = try await AddressEncoder.encode(for: location)
+                await setAddress(text: address)
+            }catch{
+                print(error)
+            }
+        }
     }
 }
 
