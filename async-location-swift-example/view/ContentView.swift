@@ -60,18 +60,20 @@ struct ContentView: View {
         HStack{
             Group{
                 Button("cancel"){ cancelTask() }
-                Button("stop"){ viewModel.stop(); cancelTask() }
-            }.disabled(isCanceled)
-            Button("start"){ startTask() }.disabled(!isCanceled)
+                Button("stop"){ stopTask() }
+            }.disabled(isDisabled)
+            Button("start"){ startTask() }
+                    .disabled(!isDisabled)
         }
         .modifier(ToolbarItemModifier())
     }
     
     // MARK: - Private
     
-    private var isCanceled : Bool{ task == nil }
-    
+    private var isDisabled : Bool{ task == nil }
+        
     private func startTask(){
+        
         task = Task{
             do{
                 try await viewModel.start()
@@ -80,6 +82,11 @@ struct ContentView: View {
                 print(error)
             }
         }
+    }
+    
+    private func stopTask(){
+        viewModel.stop()
+        cancelTask()
     }
     
     private func cancelTask(){
