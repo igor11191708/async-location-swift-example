@@ -11,7 +11,7 @@ import Contacts
 enum AddressDecoder {
     
     enum AdressError: Error{
-        case noAddressesFound
+        case noAddressFound
     }
     
     /// Async function to convert a ``CLLocation`` into a  readable address
@@ -20,7 +20,7 @@ enum AddressDecoder {
         let lines = try await geocoder.reverseGeocodeLocation(location)
         
         guard let mark = lines.first,  let address = mark.postalAddress else {
-            throw AdressError.noAddressesFound
+            throw AdressError.noAddressFound
         }
         
         return CNPostalAddressFormatter.string(from: address, style: .mailingAddress)
