@@ -13,4 +13,4 @@
 
 [Async location streamer](https://github.com/The-Igor/d3-async-location)
 
- ![simulate locations](https://github.com/The-Igor/d3-async-location/blob/main/img/image8.gif)
+ ![simulate locations](https://github.com/The-Igor/d3-async-location/blob/main/img/image9.gif)
