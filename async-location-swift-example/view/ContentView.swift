@@ -52,17 +52,19 @@ struct ContentView: View {
     
     @ViewBuilder
     private var coordinateTpl: some View{
-        let center = mapViewModel.location.center
-        Text("\(center.longitude), \(center.latitude)")
-            .fontWeight(.semibold)
-            .modifier(ToolbarItemModifier())
+            HStack {
+                let center = mapViewModel.location.center
+                Text("Longitude: \(center.longitude, specifier: "%.6f")")
+                Spacer()
+                Text("Latitude: \(center.latitude, specifier: "%.6f")")
+            }.toolbarItemModifier()
+            .padding(.horizontal)
     }
     
     @ViewBuilder
     private var addressTpl: some View{
             Text(mapViewModel.address)
-                .fontWeight(.semibold)
-                .modifier(ToolbarItemModifier())
+                .toolbarItemModifier()
     }
     
     @ViewBuilder
