@@ -16,7 +16,7 @@ struct ToolbarItemModifier: ViewModifier {
     /// - Returns: A styled view with the specified padding, background, corner radius, tint, and font.
     func body(content: Content) -> some View {
         content
-            .font(.system(size: 29, weight: .medium, design: .rounded))
+            .font(.title)
             .padding()
             .background(.thinMaterial)
             .cornerRadius(15)
