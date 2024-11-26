@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias Operation =  @Sendable () async throws -> Void
+
 /// A view model that manages a cancellable asynchronous task.
 final class TaskViewModel: ObservableObject {
 
@@ -22,7 +24,7 @@ final class TaskViewModel: ObservableObject {
     /// Starts the asynchronous operation.
     ///
     /// - Parameter operation: A `@Sendable` escaping closure representing the asynchronous operation to execute.
-    func start(operation: @Sendable @escaping () async throws -> ()) {
+    func start(operation: @escaping Operation) {
         task = Task {
             do {
                 try await operation()
