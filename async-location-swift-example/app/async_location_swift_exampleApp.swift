@@ -16,7 +16,7 @@ struct ConcurrenceApp: App {
             NavigationView{
                 ContentView()
             }
-            .preferredColorScheme(.dark)
+            .preferredColorScheme(.light)
         }
     }
 }

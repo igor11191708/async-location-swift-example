@@ -8,22 +8,28 @@
 import CoreLocation
 import Contacts
 
+/// A utility for decoding `CLLocation` objects into human-readable addresses.
 enum AddressDecoder {
     
-    enum AdressError: Error{
+    /// An error type representing possible decoding failures.
+    enum AddressError: Error {
+        /// Indicates that no address was found for the provided location.
         case noAddressFound
     }
     
-    /// Async function to convert a ``CLLocation`` into a  readable address
+    /// Converts a `CLLocation` into a readable address string asynchronously.
+    ///
+    /// - Parameter location: The `CLLocation` to decode.
+    /// - Returns: A `String` containing the formatted address.
+    /// - Throws: An `AddressError` if no address could be found.
     static func decode(for location: CLLocation) async throws -> String {
         let geocoder = CLGeocoder()
-        let lines = try await geocoder.reverseGeocodeLocation(location)
+        let placemarks = try await geocoder.reverseGeocodeLocation(location)
         
-        guard let mark = lines.first,  let address = mark.postalAddress else {
-            throw AdressError.noAddressFound
+        guard let placemark = placemarks.first, let address = placemark.postalAddress else {
+            throw AddressError.noAddressFound
         }
         
         return CNPostalAddressFormatter.string(from: address, style: .mailingAddress)
-        
     }
 }

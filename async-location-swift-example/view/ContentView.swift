@@ -2,22 +2,25 @@
 //  ContentView.swift
 //  async-location-swift-example
 //
-//  Created by Igor on 03.02.2023.
+//  Created by Igor Shelopaev on 03.02.2023.
 //
 
 import SwiftUI
 import d3_async_location
 import MapKit
 
+@MainActor
 struct ContentView: View {
     
     @StateObject private var viewModel = LMViewModel()
     
     @StateObject private var mapViewModel = MapViewModel()
     
-    @State private var task : Task<(), Never>?
+    @StateObject private var taskModel = TaskViewModel()
     
     @State private var address : String = ""
+    
+    @State private var isActive = false
     
     // MARK: - Life circle
     
@@ -41,13 +44,8 @@ struct ContentView: View {
         .onChange(of: viewModel.locations){ value in
             mapViewModel.setCurrentLocation(value)
         }
-        .navigationTitle("Async/await Location")
-        .onAppear{
-            startTask()
-        }
-        .onDisappear{
-            cancelTask()
-        }
+        .onAppear(perform: start)
+        .onDisappear(perform: stop)
     }
    
     // MARK: - Private Tpl
@@ -70,39 +68,23 @@ struct ContentView: View {
     @ViewBuilder
     private var toolbarTpl : some View{
         HStack{
-            Group{
-                Button("cancel"){ cancelTask() }
-                Button("stop"){ stopTask() }
-            }.disabled(isDisabled)
-            Button("start"){ startTask() }
-                    .disabled(!isDisabled)
+            Button("stop"){ stop() }.disabled(!isActive)
+            Button("start"){ start() }.disabled(isActive)
         }
-        .modifier(ToolbarItemModifier())
+        .toolbarItemModifier()
     }
     
     // MARK: - Private
-    
-    private var isDisabled : Bool{ task == nil }
         
-    private func startTask(){
-        
-        task = Task{
-            do{
-                try await viewModel.start()
-            }catch{
-                cancelTask()
-                print(error)
-            }
+    private func start(){
+        taskModel.start {
+            try await viewModel.start()
         }
+        isActive = true
     }
     
-    private func stopTask(){
-        viewModel.stop()
-        cancelTask()
-    }
-    
-    private func cancelTask(){
-        task?.cancel()
-        task = nil
+    private func stop(){
+        isActive = false
+        taskModel.stop()
     }
 }
