@@ -1,5 +1,5 @@
 {
-  "originHash" : "8769a39132604e8fc7813a842f157bd397f0a762ee7a707ae26d3a6bbe7e3e5a",
+  "originHash" : "d1f9a8f647d289ca03682d6cba9a772f56a0147332171c8a086927cbe0abfc29",
   "pins" : [
     {
       "identity" : "async-task",
@@ -13,7 +13,7 @@
     {
       "identity" : "d3-async-location",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/The-Igor/d3-async-location",
+      "location" : "https://github.com/igor11191708/d3-async-location",
       "state" : {
         "branch" : "main",
         "revision" : "5884dc06f93aa23c89ba2e3314447ebf1b942d16"

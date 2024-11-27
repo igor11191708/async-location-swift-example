@@ -433,7 +433,7 @@
 /* Begin XCRemoteSwiftPackageReference section */
 		780BBCD3298D038D00A4EEE6 /* XCRemoteSwiftPackageReference "d3-async-location" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/The-Igor/d3-async-location";
+			repositoryURL = "https://github.com/igor11191708/d3-async-location";
 			requirement = {
 				branch = main;
 				kind = branch;
