@@ -1,4 +1,5 @@
 {
+  "originHash" : "2095efea7f6f35875cc089000cd38b80eb6fdcd34b6b1dc929dfdf3e64c5da32",
   "pins" : [
     {
       "identity" : "d3-async-location",
@@ -6,9 +7,9 @@
       "location" : "https://github.com/The-Igor/d3-async-location",
       "state" : {
         "branch" : "main",
-        "revision" : "b096e4bfcdf25a5c6377176d5b8594bb43aa26e8"
+        "revision" : "5884dc06f93aa23c89ba2e3314447ebf1b942d16"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

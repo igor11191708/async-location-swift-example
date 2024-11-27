@@ -16,11 +16,13 @@ struct ContentView: View {
     
     @StateObject private var mapViewModel = MapViewModel()
     
-    @StateObject private var taskModel = TaskViewModel()
+    @StateObject private var taskModel = TaskViewModel<Void, AsyncLocationErrors>(errorHandler: errorHandler)
     
     @State private var address : String = ""
     
-    @State private var isActive = false
+    var isActive : Bool{
+        taskModel.isActive
+    }
     
     // MARK: - Life circle
     
@@ -32,45 +34,40 @@ struct ContentView: View {
             VStack(spacing: 0){
                 toolbarTpl
                 Spacer()
-                ZStack(alignment: .bottom){
-                    VStack{
-                        coordinateTpl
-                        addressTpl
-                    }
-                }
-                .padding(.bottom, 25)
+                dataTpl
             }
         }
-        .onChange(of: viewModel.locations){ value in
-            mapViewModel.setCurrentLocation(value)
-        }
+        .onChange(of: viewModel.locations, perform: onLocationChange)
         .onAppear(perform: start)
         .onDisappear(perform: stop)
     }
    
     // MARK: - Private Tpl
     
-    @ViewBuilder
-    private var coordinateTpl: some View{
-            HStack {
-                let center = mapViewModel.location.center
-                Text("Longitude: \(center.longitude, specifier: "%.6f")")
-                Spacer()
-                Text("Latitude: \(center.latitude, specifier: "%.6f")")
-            }.toolbarItemModifier()
-            .padding(.horizontal)
+    func onLocationChange(value: [CLLocation]){
+        mapViewModel.setCurrentLocation(value)
     }
     
     @ViewBuilder
-    private var addressTpl: some View{
-            Text(mapViewModel.address)
-                .toolbarItemModifier()
+    var dataTpl: some View{
+        ZStack(alignment: .bottom){
+            VStack{
+                if let error = taskModel.error{
+                    ViewTpl.errorTpl(error)
+                }else{
+                    let center = mapViewModel.location.center
+                    ViewTpl.coordinateTpl(center)
+                    ViewTpl.addressTpl(mapViewModel.address)
+                }
+            }
+        }
+        .padding(.bottom, 25)
     }
     
     @ViewBuilder
     private var toolbarTpl : some View{
         HStack{
-            Button("stop"){ stop() }.disabled(!isActive)
+            Button("cancel"){ stop() }.disabled(!isActive)
             Button("start"){ start() }.disabled(isActive)
         }
         .toolbarItemModifier()
@@ -82,11 +79,18 @@ struct ContentView: View {
         taskModel.start {
             try await viewModel.start()
         }
-        isActive = true
     }
     
     private func stop(){
-        isActive = false
-        taskModel.stop()
+        taskModel.cancel()
     }
+}
+
+@Sendable
+func errorHandler(_ error : Error?) -> AsyncLocationErrors?{
+    if error is CancellationError{
+        return .streamCanceled
+    }
+    
+    return nil
 }
