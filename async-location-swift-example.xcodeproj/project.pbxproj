@@ -12,8 +12,8 @@
 		780BBCC5298CEC5F00A4EEE6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 780BBCC4298CEC5F00A4EEE6 /* Preview Assets.xcassets */; };
 		780BBCD2298CF99400A4EEE6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 780BBCD1298CF99400A4EEE6 /* README.md */; };
 		780BBCD5298D038D00A4EEE6 /* d3-async-location in Frameworks */ = {isa = PBXBuildFile; productRef = 780BBCD4298D038D00A4EEE6 /* d3-async-location */; };
-		786796162CF6090500352F7A /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786796152CF6090500352F7A /* TaskViewModel.swift */; };
 		7867961C2CF7195F00352F7A /* Tpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7867961B2CF7195900352F7A /* Tpl.swift */; };
+		7867961F2CF7272700352F7A /* async-task in Frameworks */ = {isa = PBXBuildFile; productRef = 7867961E2CF7272700352F7A /* async-task */; };
 		78CA15F62994F01F00BC0124 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA15F52994F01F00BC0124 /* MapViewModel.swift */; };
 		78CA15F82995142900BC0124 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA15F72995142900BC0124 /* MapView.swift */; };
 		78CA15FA29952BE900BC0124 /* ToolbarItemModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA15F929952BE900BC0124 /* ToolbarItemModifier.swift */; };
@@ -28,7 +28,6 @@
 		780BBCC4298CEC5F00A4EEE6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		780BBCD0298CF6A300A4EEE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		780BBCD1298CF99400A4EEE6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		786796152CF6090500352F7A /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		7867961B2CF7195900352F7A /* Tpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tpl.swift; sourceTree = "<group>"; };
 		78CA15F52994F01F00BC0124 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		78CA15F72995142900BC0124 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -42,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7867961F2CF7272700352F7A /* async-task in Frameworks */,
 				780BBCD5298D038D00A4EEE6 /* d3-async-location in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				78CA15F52994F01F00BC0124 /* MapViewModel.swift */,
-				786796152CF6090500352F7A /* TaskViewModel.swift */,
 			);
 			path = viewmodel;
 			sourceTree = "<group>";
@@ -158,6 +157,7 @@
 			name = "async-location-swift-example";
 			packageProductDependencies = (
 				780BBCD4298D038D00A4EEE6 /* d3-async-location */,
+				7867961E2CF7272700352F7A /* async-task */,
 			);
 			productName = "async-location-swift-example";
 			productReference = 780BBCBA298CEC5F00A4EEE6 /* async-location-swift-example.app */;
@@ -189,6 +189,7 @@
 			mainGroup = 780BBCB1298CEC5F00A4EEE6;
 			packageReferences = (
 				780BBCD3298D038D00A4EEE6 /* XCRemoteSwiftPackageReference "d3-async-location" */,
+				7867961D2CF7272700352F7A /* XCRemoteSwiftPackageReference "async-task" */,
 			);
 			productRefGroup = 780BBCBB298CEC5F00A4EEE6 /* Products */;
 			projectDirPath = "";
@@ -224,7 +225,6 @@
 				7867961C2CF7195F00352F7A /* Tpl.swift in Sources */,
 				780BBCBE298CEC5F00A4EEE6 /* async_location_swift_exampleApp.swift in Sources */,
 				78CA15F62994F01F00BC0124 /* MapViewModel.swift in Sources */,
-				786796162CF6090500352F7A /* TaskViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +439,14 @@
 				kind = branch;
 			};
 		};
+		7867961D2CF7272700352F7A /* XCRemoteSwiftPackageReference "async-task" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/igor11191708/async-task";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -446,6 +454,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 780BBCD3298D038D00A4EEE6 /* XCRemoteSwiftPackageReference "d3-async-location" */;
 			productName = "d3-async-location";
+		};
+		7867961E2CF7272700352F7A /* async-task */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7867961D2CF7272700352F7A /* XCRemoteSwiftPackageReference "async-task" */;
+			productName = "async-task";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

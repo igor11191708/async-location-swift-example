@@ -1,6 +1,15 @@
 {
-  "originHash" : "2095efea7f6f35875cc089000cd38b80eb6fdcd34b6b1dc929dfdf3e64c5da32",
+  "originHash" : "8769a39132604e8fc7813a842f157bd397f0a762ee7a707ae26d3a6bbe7e3e5a",
   "pins" : [
+    {
+      "identity" : "async-task",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/igor11191708/async-task",
+      "state" : {
+        "branch" : "main",
+        "revision" : "f8f0e9be4300ea6364dd4e81d9f7184be7802357"
+      }
+    },
     {
       "identity" : "d3-async-location",
       "kind" : "remoteSourceControl",

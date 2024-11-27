@@ -8,6 +8,7 @@
 import SwiftUI
 import d3_async_location
 import MapKit
+import async_task
 
 @MainActor
 struct ContentView: View {
@@ -16,13 +17,9 @@ struct ContentView: View {
     
     @StateObject private var mapViewModel = MapViewModel()
     
-    @StateObject private var taskModel = TaskViewModel<Void, AsyncLocationErrors>(errorHandler: errorHandler)
+    @StateObject private var taskModel = SingleTaskViewModel<Void, AsyncLocationErrors>(errorHandler: errorHandler)
     
-    @State private var address : String = ""
-    
-    var isActive : Bool{
-        taskModel.isActive
-    }
+    var isActive : Bool{ taskModel.isActive }
     
     // MARK: - Life circle
     
