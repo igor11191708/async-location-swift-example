@@ -10,6 +10,8 @@ import d3_async_location
 import MapKit
 import async_task
 
+typealias TaskModel = Async.SingleTask<Void, AsyncLocationErrors>
+
 @MainActor
 struct ContentView: View {
     
@@ -17,9 +19,9 @@ struct ContentView: View {
     
     @StateObject private var mapViewModel = MapViewModel()
     
-    @StateObject private var taskModel = SingleTaskViewModel<Void, AsyncLocationErrors>(errorHandler: errorHandler)
+    @StateObject private var taskModel = TaskModel(errorHandler: errorHandler)
     
-    var isActive : Bool{ taskModel.isActive }
+    var isActive : Bool{ taskModel.state.isActive }
     
     // MARK: - Life circle
     
