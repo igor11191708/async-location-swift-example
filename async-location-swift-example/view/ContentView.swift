@@ -19,7 +19,7 @@ struct ContentView: View {
     
     @StateObject private var mapViewModel = MapViewModel()
     
-    @StateObject private var taskModel = TaskModel(errorHandler: errorHandler)
+    @StateObject private var taskModel = TaskModel(errorMapper: errorMapper)
     
     var isActive : Bool{ taskModel.state.isActive }
     
@@ -86,7 +86,7 @@ struct ContentView: View {
 }
 
 @Sendable
-func errorHandler(_ error : Error?) -> AsyncLocationErrors?{
+func errorMapper(_ error : Error?) -> AsyncLocationErrors?{
     if error is CancellationError{
         return .streamCanceled
     }
