@@ -7,7 +7,7 @@
       "location" : "https://github.com/swiftuiux/async-task",
       "state" : {
         "branch" : "main",
-        "revision" : "3ce8c69e3b31f047ae6a700f03de22f5505c6f0b"
+        "revision" : "04301c479c135e405cab5550047020dbbe7a06c2"
       }
     },
     {
@@ -16,7 +16,7 @@
       "location" : "https://github.com/swiftuiux/d3-async-location",
       "state" : {
         "branch" : "main",
-        "revision" : "cfdfb09ce12359252ff04a3398ff09725061ba79"
+        "revision" : "a116ceaf0ba9e3e3275789cdd3d45fdce8a0142d"
       }
     }
   ],
