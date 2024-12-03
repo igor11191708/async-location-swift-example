@@ -11,11 +11,13 @@ import MapKit
 import async_task
 
 typealias TaskModel = Async.SingleTask<Void, AsyncLocationErrors>
+typealias Output = LocationStreamer.Output
 
+@available(iOS 17.0, *)
 @MainActor
 struct ContentView: View {
     
-    @StateObject private var viewModel = LocationStreamer()
+    @State var viewModel = ObservableLocationStreamer()
     
     @StateObject private var mapViewModel = MapViewModel()
     
@@ -36,14 +38,16 @@ struct ContentView: View {
                 dataTpl
             }
         }
-        .onChange(of: viewModel.results, perform: onResultChange)
+        .onChange(of: viewModel.results){ oldValue, newValue in
+            onResultChange(values: newValue)
+        }
         .onAppear(perform: start)
         .onDisappear(perform: stop)
     }
    
     // MARK: - Private Tpl
     
-    func onResultChange(values: [LocationStreamer.Output]){
+    func onResultChange(values: [Output]){
         
         guard let result = values.first else { return }
         
