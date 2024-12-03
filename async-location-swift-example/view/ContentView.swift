@@ -15,7 +15,7 @@ typealias TaskModel = Async.SingleTask<Void, AsyncLocationErrors>
 @MainActor
 struct ContentView: View {
     
-    @StateObject private var viewModel = LMViewModel()
+    @StateObject private var viewModel = LocationStreamer()
     
     @StateObject private var mapViewModel = MapViewModel()
     
@@ -43,7 +43,7 @@ struct ContentView: View {
    
     // MARK: - Private Tpl
     
-    func onResultChange(values: [LMViewModel.Output]){
+    func onResultChange(values: [LocationStreamer.Output]){
         
         guard let result = values.first else { return }
         
