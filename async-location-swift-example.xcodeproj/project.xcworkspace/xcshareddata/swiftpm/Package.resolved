@@ -1,5 +1,5 @@
 {
-  "originHash" : "94f745f85f99faf570e79eff19633d6e52391f4d515adf828696d1d18c9d776d",
+  "originHash" : "23066c0589046cd64215c68e8cb7709c8fe22f04b3ab0d1dd123cd0be611d231",
   "pins" : [
     {
       "identity" : "async-task",
@@ -7,16 +7,7 @@
       "location" : "https://github.com/swiftuiux/async-task",
       "state" : {
         "branch" : "main",
-        "revision" : "85c38928be67b66b4d8563cc2917443a445a742e"
-      }
-    },
-    {
-      "identity" : "d3-async-location",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/swiftuiux/d3-async-location",
-      "state" : {
-        "branch" : "main",
-        "revision" : "a116ceaf0ba9e3e3275789cdd3d45fdce8a0142d"
+        "revision" : "f0be1c5e1e112f21df48fe9b94230d136b8396d4"
       }
     }
   ],

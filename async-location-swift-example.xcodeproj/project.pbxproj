@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,6 @@
 		780BBCC2298CEC5F00A4EEE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 780BBCC1298CEC5F00A4EEE6 /* Assets.xcassets */; };
 		780BBCC5298CEC5F00A4EEE6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 780BBCC4298CEC5F00A4EEE6 /* Preview Assets.xcassets */; };
 		780BBCD2298CF99400A4EEE6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 780BBCD1298CF99400A4EEE6 /* README.md */; };
-		780BBCD5298D038D00A4EEE6 /* d3-async-location in Frameworks */ = {isa = PBXBuildFile; productRef = 780BBCD4298D038D00A4EEE6 /* d3-async-location */; };
 		7867961C2CF7195F00352F7A /* Tpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7867961B2CF7195900352F7A /* Tpl.swift */; };
 		7867961F2CF7272700352F7A /* async-task in Frameworks */ = {isa = PBXBuildFile; productRef = 7867961E2CF7272700352F7A /* async-task */; };
 		78CA15F62994F01F00BC0124 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA15F52994F01F00BC0124 /* MapViewModel.swift */; };
@@ -19,6 +18,7 @@
 		78CA15FA29952BE900BC0124 /* ToolbarItemModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA15F929952BE900BC0124 /* ToolbarItemModifier.swift */; };
 		78CA16162996015000BC0124 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA16152996015000BC0124 /* ContentView.swift */; };
 		78DB5F4F299776FF008A341E /* AddressDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB5F4E299776FF008A341E /* AddressDecoder.swift */; };
+		78DC33672CFDBF65009A0DB3 /* d3-async-location in Frameworks */ = {isa = PBXBuildFile; productRef = 78DC33662CFDBF65009A0DB3 /* d3-async-location */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7867961F2CF7272700352F7A /* async-task in Frameworks */,
-				780BBCD5298D038D00A4EEE6 /* d3-async-location in Frameworks */,
+				78DC33672CFDBF65009A0DB3 /* d3-async-location in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,8 +156,8 @@
 			);
 			name = "async-location-swift-example";
 			packageProductDependencies = (
-				780BBCD4298D038D00A4EEE6 /* d3-async-location */,
 				7867961E2CF7272700352F7A /* async-task */,
+				78DC33662CFDBF65009A0DB3 /* d3-async-location */,
 			);
 			productName = "async-location-swift-example";
 			productReference = 780BBCBA298CEC5F00A4EEE6 /* async-location-swift-example.app */;
@@ -188,8 +188,8 @@
 			);
 			mainGroup = 780BBCB1298CEC5F00A4EEE6;
 			packageReferences = (
-				780BBCD3298D038D00A4EEE6 /* XCRemoteSwiftPackageReference "d3-async-location" */,
 				7867961D2CF7272700352F7A /* XCRemoteSwiftPackageReference "async-task" */,
+				78DC33652CFDBF65009A0DB3 /* XCLocalSwiftPackageReference "../d3-async-location" */,
 			);
 			productRefGroup = 780BBCBB298CEC5F00A4EEE6 /* Products */;
 			projectDirPath = "";
@@ -370,6 +370,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.igorshell.async-location-swift-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -401,6 +404,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.igorshell.async-location-swift-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -430,15 +436,14 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		780BBCD3298D038D00A4EEE6 /* XCRemoteSwiftPackageReference "d3-async-location" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/swiftuiux/d3-async-location";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		78DC33652CFDBF65009A0DB3 /* XCLocalSwiftPackageReference "../d3-async-location" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../d3-async-location";
 		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
 		7867961D2CF7272700352F7A /* XCRemoteSwiftPackageReference "async-task" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/swiftuiux/async-task";
@@ -450,15 +455,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		780BBCD4298D038D00A4EEE6 /* d3-async-location */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 780BBCD3298D038D00A4EEE6 /* XCRemoteSwiftPackageReference "d3-async-location" */;
-			productName = "d3-async-location";
-		};
 		7867961E2CF7272700352F7A /* async-task */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7867961D2CF7272700352F7A /* XCRemoteSwiftPackageReference "async-task" */;
 			productName = "async-task";
+		};
+		78DC33662CFDBF65009A0DB3 /* d3-async-location */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "d3-async-location";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

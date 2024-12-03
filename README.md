@@ -2,7 +2,7 @@
 
  ## Features
 - [x] Using new concurrency swift model around CoreLocation manager
-- [x] Customizable in terms of passing a custom delegate conforming to **ILocationDelegate** protocol
+- [x] Customizable in terms of passing a preconfigured CLLocationManager
 - [x] Customizable in terms of CLLocationManager properties
 - [x] Streaming current location asynchronously
 - [x] Different strategies - Keep and publish all stack of locations since streaming has started or the last one

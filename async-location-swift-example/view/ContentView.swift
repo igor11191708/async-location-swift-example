@@ -19,7 +19,7 @@ struct ContentView: View {
     
     @StateObject private var mapViewModel = MapViewModel()
     
-    @StateObject private var taskModel = TaskModel(errorMapper: errorMapper)
+    @StateObject private var taskModel = TaskModel()
     
     var isActive : Bool{ taskModel.state.isActive }
     
@@ -36,15 +36,22 @@ struct ContentView: View {
                 dataTpl
             }
         }
-        .onChange(of: viewModel.locations, perform: onLocationChange)
+        .onChange(of: viewModel.results, perform: onResultChange)
         .onAppear(perform: start)
         .onDisappear(perform: stop)
     }
    
     // MARK: - Private Tpl
     
-    func onLocationChange(value: [CLLocation]){
-        mapViewModel.setCurrentLocation(value)
+    func onResultChange(values: [LMViewModel.Output]){
+        
+        guard let result = values.first else { return }
+        
+        if case .success(let coordinates) = result {
+            mapViewModel.setCurrentLocation(coordinates)
+        }else if case .failure(let error) = result{
+            print(error)
+        }
     }
     
     @ViewBuilder
@@ -83,13 +90,4 @@ struct ContentView: View {
     private func stop(){
         taskModel.cancel()
     }
-}
-
-@Sendable
-func errorMapper(_ error : Error?) -> AsyncLocationErrors?{
-    if error is CancellationError{
-        return .streamCanceled
-    }
-    
-    return nil
 }
