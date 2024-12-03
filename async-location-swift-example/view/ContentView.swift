@@ -13,11 +13,10 @@ import async_task
 typealias TaskModel = Async.SingleTask<Void, AsyncLocationErrors>
 typealias Output = LocationStreamer.Output
 
-@available(iOS 17.0, *)
 @MainActor
 struct ContentView: View {
     
-    @State var viewModel = ObservableLocationStreamer()
+    @StateObject var viewModel = LocationStreamer()
     
     @StateObject private var mapViewModel = MapViewModel()
     
@@ -38,9 +37,7 @@ struct ContentView: View {
                 dataTpl
             }
         }
-        .onChange(of: viewModel.results){ oldValue, newValue in
-            onResultChange(values: newValue)
-        }
+        .onChange(of: viewModel.results, perform: onResultChange)
         .onAppear(perform: start)
         .onDisappear(perform: stop)
     }
