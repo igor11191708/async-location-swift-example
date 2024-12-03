@@ -11,6 +11,6 @@
 
 ## SwiftUI example for package
 
-[Async location streamer](https://github.com/The-Igor/d3-async-location)
+[Async location streamer](https://github.com/swiftuiux/swift-async-corelocation)
 
  ![simulate locations](https://github.com/The-Igor/d3-async-location/blob/main/img/image11.gif)
