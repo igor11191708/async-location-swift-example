@@ -1,5 +1,5 @@
 {
-  "originHash" : "932c78a31f232958f20f44de21608ea8a14748e5fc5965911b03a05e2acdd241",
+  "originHash" : "48014d704ceddc6b7a2d055cf60e4d67a4b7d99ea3bf128524f8076692d11f11",
   "pins" : [
     {
       "identity" : "async-task",
@@ -11,9 +11,9 @@
       }
     },
     {
-      "identity" : "swift-async-corelocation-location",
+      "identity" : "swift-async-corelocation-streamer",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/swiftuiux/swift-async-corelocation-location",
+      "location" : "https://github.com/swiftuiux/swift-async-corelocation-streamer",
       "state" : {
         "branch" : "main",
         "revision" : "0244e9c09d614269d14b8953f684c89d562c8bd0"

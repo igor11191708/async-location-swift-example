@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		780A837B2CFF429C005AD797 /* d3-async-location in Frameworks */ = {isa = PBXBuildFile; productRef = 780A837A2CFF429C005AD797 /* d3-async-location */; };
+		780A837E2CFF4E63005AD797 /* d3-async-location in Frameworks */ = {isa = PBXBuildFile; productRef = 780A837D2CFF4E63005AD797 /* d3-async-location */; };
 		780BBCBE298CEC5F00A4EEE6 /* async_location_swift_exampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780BBCBD298CEC5F00A4EEE6 /* async_location_swift_exampleApp.swift */; };
 		780BBCC2298CEC5F00A4EEE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 780BBCC1298CEC5F00A4EEE6 /* Assets.xcassets */; };
 		780BBCC5298CEC5F00A4EEE6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 780BBCC4298CEC5F00A4EEE6 /* Preview Assets.xcassets */; };
@@ -42,7 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				780A837B2CFF429C005AD797 /* d3-async-location in Frameworks */,
+				780A837E2CFF4E63005AD797 /* d3-async-location in Frameworks */,
 				7867961F2CF7272700352F7A /* async-task in Frameworks */,
 				78DC33672CFDBF65009A0DB3 /* d3-async-location in Frameworks */,
 			);
@@ -160,7 +160,7 @@
 			packageProductDependencies = (
 				7867961E2CF7272700352F7A /* async-task */,
 				78DC33662CFDBF65009A0DB3 /* d3-async-location */,
-				780A837A2CFF429C005AD797 /* d3-async-location */,
+				780A837D2CFF4E63005AD797 /* d3-async-location */,
 			);
 			productName = "async-location-swift-example";
 			productReference = 780BBCBA298CEC5F00A4EEE6 /* async-location-swift-example.app */;
@@ -192,7 +192,7 @@
 			mainGroup = 780BBCB1298CEC5F00A4EEE6;
 			packageReferences = (
 				7867961D2CF7272700352F7A /* XCRemoteSwiftPackageReference "async-task" */,
-				780A83792CFF429C005AD797 /* XCRemoteSwiftPackageReference "swift-async-corelocation-location" */,
+				780A837C2CFF4E63005AD797 /* XCRemoteSwiftPackageReference "swift-async-corelocation-streamer" */,
 			);
 			productRefGroup = 780BBCBB298CEC5F00A4EEE6 /* Products */;
 			projectDirPath = "";
@@ -442,9 +442,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		780A83792CFF429C005AD797 /* XCRemoteSwiftPackageReference "swift-async-corelocation-location" */ = {
+		780A837C2CFF4E63005AD797 /* XCRemoteSwiftPackageReference "swift-async-corelocation-streamer" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/swiftuiux/swift-async-corelocation-location";
+			repositoryURL = "https://github.com/swiftuiux/swift-async-corelocation-streamer";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -461,9 +461,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		780A837A2CFF429C005AD797 /* d3-async-location */ = {
+		780A837D2CFF4E63005AD797 /* d3-async-location */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 780A83792CFF429C005AD797 /* XCRemoteSwiftPackageReference "swift-async-corelocation-location" */;
+			package = 780A837C2CFF4E63005AD797 /* XCRemoteSwiftPackageReference "swift-async-corelocation-streamer" */;
 			productName = "d3-async-location";
 		};
 		7867961E2CF7272700352F7A /* async-task */ = {
