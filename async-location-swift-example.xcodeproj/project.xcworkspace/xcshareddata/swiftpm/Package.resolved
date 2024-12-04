@@ -7,7 +7,7 @@
       "location" : "https://github.com/swiftuiux/async-task",
       "state" : {
         "branch" : "main",
-        "revision" : "f0be1c5e1e112f21df48fe9b94230d136b8396d4"
+        "revision" : "6c88c908c563dc5eff4a4301ba4fe787d8002375"
       }
     },
     {
@@ -16,7 +16,7 @@
       "location" : "https://github.com/swiftuiux/swift-async-corelocation-streamer",
       "state" : {
         "branch" : "main",
-        "revision" : "d2ead72d6ecb9afdca99cff01039fb1ca76da95a"
+        "revision" : "5fc5e833815dce0da13709683654bc6bf6fc0aff"
       }
     }
   ],
